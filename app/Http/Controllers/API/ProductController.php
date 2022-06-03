@@ -22,7 +22,7 @@ class ProductController extends BaseController
     public function userProducts($id)
     {
         $product = Product::find($id);
-        if($product == null)
+        if($product == false)
         {
             return $this->sendError('Product Not Found');
         }
@@ -61,7 +61,7 @@ class ProductController extends BaseController
     public function show($id)
     {
         $product = Product::find($id);
-        if($product == null)
+        if($product == false)
         {
             return $this->sendError('Product Not Found');
         }
@@ -106,7 +106,7 @@ class ProductController extends BaseController
     public function destroy($id)
     {
         $product = Product::find($id);
-        if($product == null)
+        if($product == false)
         {
             return $this->sendError('Product Not Found');
         }
