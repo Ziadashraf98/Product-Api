@@ -39,7 +39,7 @@ class RegisterController extends BaseController
         if(Auth::attempt(['email'=>$request->email , 'password'=>$request->password]))
         {
             $user = Auth::user();
-            // $user->api_token = Str::random(length:60);
+            $user->api_token = Str::random(length:60);
             return $this->sendResponse($user , 'User Login Successfully');
         }
         else
